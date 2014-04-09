@@ -722,7 +722,7 @@ class AxisItem(GraphicsWidget):
             tickLength = self.tickLength / ((i*0.5)+1.0)
                 
             lineAlpha = 255 / (i+1)
-            if self.grid is not False:
+            if self.grid is not False and self._tickLevels is None:
                 lineAlpha *= self.grid/255. * np.clip((0.05  * lengthInPixels / (len(ticks)+1)), 0., 1.)
             
             for v in ticks:
